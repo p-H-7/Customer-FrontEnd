@@ -1,38 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Customer Front End
+This is an Client side FrontEnd Application for an E-Commerce and is integrated with an Admin Dashboard [Website](https://github.com/p-H-7/E-Commerce-Admin/edit/main/README.md) .
+[Next.js](https://nextjs.org/) project,[styled-components]([https://tailwindcss.com/](https://styled-components.com/)) is used for styling, [MongoDB](https://www.mongodb.com/) used for backend.
 
 ## Getting Started
+Kickstart by 
+Use the `npm install` command to install dependencies.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Start the application on terminal by these two commands
+ ```bash
+ `yarn build` `yarn start`
 ```
+Landing page has a a feature product area where a display of product is shown in the Layout.
+Navbar has a list of pages of **Home**, **Products** and **Cart**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+New Arrivals where all the new arrivals are displayed.
+Each product has a single page dedicated where all the details are shown.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+All the product information is retrieved from the MongoDB database, which can be updated from [E-commerce-Admin](https://github.com/p-H-7/E-Commerce-Admin/edit/main/README.md).
+*  ***Order Item***page where we can **Add to Cart** it is an array of `OrderItem_id`, `qauntity`, `price`, `field`
+* ***Cart*** is an array of `cart_id`, `quantity`
+* ***Customer Details***. On the final checkout, we request information of customer in a `string` format in an array of `Name`, `E-mail`, `City`, `Postal code`, `Street Address`, `Country`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Below ae the working images of the website.
+![image](https://github.com/p-H-7/Customer-FrontEnd/assets/82563863/1a4f016b-1d71-47c0-9ead-d09bf732eb0c)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![image](https://github.com/p-H-7/Customer-FrontEnd/assets/82563863/8ab4d619-3cd6-43ed-967d-3af82b989e46)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![image](https://github.com/p-H-7/Customer-FrontEnd/assets/82563863/25346205-b16b-42c1-b8cb-e70220826c8b)
 
-## Learn More
+![image](https://github.com/p-H-7/Customer-FrontEnd/assets/82563863/85294214-6236-4921-a458-fd631a93adb3)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
