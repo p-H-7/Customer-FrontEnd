@@ -7,6 +7,7 @@ import {CartContext} from "@/components/CartContext";
 import axios from "axios";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
+import productImages from '@/components/images';
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -106,10 +107,15 @@ export default function CartPage() {
       name,email,city,postalCode,streetAddress,country,
       cartProducts,
     });
-    if (response.data.url) {
-      window.location = response.data.url;
+    if (response.status === 200) {
+      // Display a notification
+      alert(response.data.message); // Or use a more sophisticated notification system
+    } else {
+      // Handle errors or unsuccessful responses
+      alert('There was an issue with your order.');
     }
   }
+
   let total = 0;
   for (const productId of cartProducts) {
     const price = products.find(p => p._id === productId)?.price || 0;
@@ -155,7 +161,7 @@ export default function CartPage() {
                     <tr key={product._id}>
                       <ProductInfoCell>
                         <ProductImageBox>
-                          <img src={product.images[0]} alt=""/>
+                          <img src={productImages[product._id][0]} alt=""/>
                         </ProductImageBox>
                         {product.title}
                       </ProductInfoCell>
@@ -169,14 +175,14 @@ export default function CartPage() {
                           onClick={() => moreOfThisProduct(product._id)}>+</Button>
                       </td>
                       <td>
-                        ${cartProducts.filter(id => id === product._id).length * product.price}
+                        Rs.{cartProducts.filter(id => id === product._id).length * product.price}
                       </td>
                     </tr>
                   ))}
                   <tr>
                     <td></td>
                     <td></td>
-                    <td>${total}</td>
+                    <td>Rs.{total}</td>
                   </tr>
                 </tbody>
               </Table>
@@ -219,7 +225,7 @@ export default function CartPage() {
                      onChange={ev => setCountry(ev.target.value)}/>
               <Button black block
                       onClick={goToPayment}>
-                Continue to payment
+                Place Order
               </Button>
             </Box>
           )}

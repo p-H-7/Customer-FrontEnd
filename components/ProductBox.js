@@ -4,6 +4,7 @@ import CartIcon from "@/components/icons/CartIcon";
 import Link from "next/link";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
+import productImages from '@/components/images';
 
 const ProductWrapper = styled.div`
   
@@ -60,19 +61,20 @@ const Price = styled.div`
 
 export default function ProductBox({_id,title,description,price,images}) {
   const {addProduct} = useContext(CartContext);
+  const imagesForThisProduct = productImages[_id] || [];
   const url = '/product/'+_id;
   return (
     <ProductWrapper>
       <WhiteBox href={url}>
         <div>
-          <img src={images?.[0]} alt=""/>
+          <img src={imagesForThisProduct[0]} alt=""/>
         </div>
       </WhiteBox>
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
           <Price>
-            ${price}
+            Rs.{price}
           </Price>
           <Button block onClick={() => addProduct(_id)} primary outline>
             Add to cart

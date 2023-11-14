@@ -10,6 +10,7 @@ import Button from "@/components/Button";
 import CartIcon from "@/components/icons/CartIcon";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
+import productImages from '@/components/images';
 
 const ColWrapper = styled.div`
   display: grid;
@@ -31,20 +32,21 @@ const Price = styled.span`
 
 export default function ProductPage({product}) {
   const {addProduct} = useContext(CartContext);
+  const imagesForThisProduct = productImages[product._id] || [];
   return (
     <>
       <Header />
       <Center>
         <ColWrapper>
           <WhiteBox>
-            <ProductImages images={product.images} />
+            <ProductImages images={imagesForThisProduct} />
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
             <p>{product.description}</p>
             <PriceRow>
               <div>
-                <Price>${product.price}</Price>
+                <Price>Rs.{product.price}</Price>
               </div>
               <div>
                 <Button primary onClick={() => addProduct(product._id)}>

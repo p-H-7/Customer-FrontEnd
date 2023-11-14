@@ -26,7 +26,7 @@ export default async function handler(req,res) {
       line_items.push({
         quantity,
         price_data: {
-          currency: 'USD',
+          currency: 'Rupees',
           product_data: {name:productInfo.title},
           unit_amount: quantity * productInfo.price * 100,
         },
@@ -39,7 +39,7 @@ export default async function handler(req,res) {
     streetAddress,country,paid:false,
   });
 
-  const session = await stripe.checkout.sessions.create({
+  /*const session = await stripe.checkout.sessions.create({
     line_items,
     mode: 'payment',
     customer_email: email,
@@ -50,6 +50,11 @@ export default async function handler(req,res) {
 
   res.json({
     url:session.url,
-  })
+  })*/
+
+  res.status(200).json({
+    message: 'Your order has been placed successfully',
+    orderId: orderDoc._id,
+  });
 
 }

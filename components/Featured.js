@@ -79,7 +79,7 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img src="..\public\macbook-pro.png" alt=""/>
+            <img src="macbook pro.svg" alt=""/>
           </Column>
         </ColumnsWrapper>
       </Center>
