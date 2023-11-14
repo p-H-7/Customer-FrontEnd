@@ -1,10 +1,13 @@
 # Customer Front End
-This is an Client side FrontEnd Application for an E-Commerce and is integrated with an Admin Dashboard [Website](https://github.com/p-H-7/E-Commerce-Admin/edit/main/README.md) .
-[Next.js](https://nextjs.org/) project,[styled-components]([https://tailwindcss.com/](https://styled-components.com/)) is used for styling, [MongoDB](https://www.mongodb.com/) used for backend.
+This is an Client side FrontEnd Application for an E-Commerce and is integrated with an Admin Dashboard [Website](https://github.com/p-H-7/E-Commerce-Admin/edit/main/README.md) . It is built using
+[Next.js](https://nextjs.org/) frmewrok, and [styled-components]([https://tailwindcss.com/](https://styled-components.com/)) is used for styling. [MongoDB](https://www.mongodb.com/) is used for database and Noe.js is used backend.
 
 ## Getting Started
-Kickstart by 
-Use the `npm install` command to install dependencies.
+Kickstart by using  the 
+```bash
+ `yarn build` `yarn start`
+```
+command to install dependencies.
 
 Start the application on terminal by these two commands
  ```bash
