@@ -5,13 +5,14 @@
 ## Getting Started
 Kickstart by using  the 
 ```bash
- `npm install`
+ npm install
 ```
 command to install dependencies.
 
 Start the application on terminal by these two commands
  ```bash
- `yarn build` `yarn start`
+ yarn build
+ yarn start
 ```
 Landing page has a a feature product area where a display of product is shown in the Layout.
 Navbar has a list of pages of **Home**, **Products** and **Cart**.
